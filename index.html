@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pemilahan Barang - Belt Conveyor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-conveyor-belt"></i> Sistem Pemilahan Barang</h1>
+            <p>Monitor dan kendalikan conveyor pemilah barang merah, biru, dan kuning secara realtime</p>
+            <div class="color-legend">
+                <div class="legend-item">
+                    <div class="legend-color merah"></div>
+                    <span>Barang Merah</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color biru"></div>
+                    <span>Barang Biru</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color kuning"></div>
+                    <span>Barang Kuning</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard">
+            <div class="card">
+                <h2><i class="fas fa-chart-bar"></i> Statistik Pemilahan</h2>
+                <div id="statistics-container">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Barang Dipilah:</span>
+                        <span id="total-sorted" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Barang Merah:</span>
+                        <span id="merah-sorted" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Barang Biru:</span>
+                        <span id="biru-sorted" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Barang Kuning:</span>
+                        <span id="kuning-sorted" class="stat-value">0</span>
+                    </div>
+                    <!-- BARIS "DI ATAS CONVEYOR" SUDAH DIHAPUS -->
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-cogs"></i> Kontrol Conveyor</h2>
+                <div class="controls">
+                    <button id="start-btn" class="btn-start">
+                        <i class="fas fa-play"></i> Jalankan
+                    </button>
+                    <button id="stop-btn" class="btn-stop">
+                        <i class="fas fa-stop"></i> Hentikan
+                    </button>
+                    <button id="reset-btn" class="btn-reset">
+                        <i class="fas fa-redo"></i> Reset Data
+                    </button>
+                </div>
+                <div class="status-indicator">
+                    <div id="status-dot" class="status-dot status-stopped"></div>
+                    <span id="status-text">Conveyor Berhenti</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="conveyor-container">
+            <!-- JUDUL "CONVEYOR BELT" SUDAH DIHAPUS -->
+            <div class="conveyor">
+                <div class="conveyor-line"></div>
+                <div class="conveyor-belt" id="conveyor-belt">
+                    <!-- Items akan ditambahkan secara dinamis di sini -->
+                </div>
+            </div>
+        </div>
+
+        <div class="items-list">
+            <h2><i class="fas fa-list-alt"></i> Daftar Barang Terbaru</h2>
+            <div class="table-container">
+                <table id="items-table">
+                    <thead>
+                        <tr>
+                            <th>ID Barang</th>
+                            <th>Warna</th>
+                            <th>Waktu</th>
+                            <th>Status</th>
+                            <th>Posisi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="items-table-body">
+                        <!-- Data akan diisi dari Firebase -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer>
+            <p>Sistem Pemilahan Barang dengan Firebase &copy; 2023 | Dibuat untuk monitoring belt conveyor</p>
+            <p id="connection-status" style="margin-top: 10px;">
+                <i class="fas fa-circle" style="color: #e74c3c;"></i> Menghubungkan ke Firebase...
+            </p>
+        </footer>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
