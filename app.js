@@ -1,13 +1,12 @@
 // Konfigurasi Firebase - GANTI DENGAN KONFIGURASI ANDA SENDIRI
 const firebaseConfig = {
-  apiKey: "AIzaSyCdaQGQPzj6nwktNe2NVFTgA-DfbFySI3M",
-  authDomain: "belt-conveyor-sorter.firebaseapp.com",
-  databaseURL: "https://belt-conveyor-sorter-default-rtdb.firebaseio.com",
-  projectId: "belt-conveyor-sorter",
-  storageBucket: "belt-conveyor-sorter.firebasestorage.app",
-  messagingSenderId: "80416165505",
-  appId: "1:80416165505:web:f8dd580d6179bcc1fcc780",
-  measurementId: "G-BN11PX6HCJ"
+  apiKey: "AIzaSyAutTzql8QydtEq55pA1biLN0JakOR1VIc",
+  authDomain: "conveyorv12.firebaseapp.com",
+  databaseURL: "https://conveyorv12-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "conveyorv12",
+  storageBucket: "conveyorv12.firebasestorage.app",
+  messagingSenderId: "112848392734",
+  appId: "1:112848392734:web:6153fd5acd105dc346140f"
 };
 
 // Inisialisasi Firebase
@@ -414,4 +413,5 @@ function initApp() {
 }
 
 // Jalankan aplikasi ketika halaman siap
+
 document.addEventListener('DOMContentLoaded', initApp);
